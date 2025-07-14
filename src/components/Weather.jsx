@@ -48,9 +48,12 @@ function Weather() {
         <input ref={inputRef} type="text"placeholder='search'/>
         <img src={search_icon} alt="" onClick={()=>search(inputRef.current.value)}/>
       </div>
-      <img src={weatherData.img} alt="" className='weather-icon'/>
-      <p className='temperature'>{weatherData.temperature}°c</p>
-      <p className='location'>{weatherData.location}</p>
+
+      {weatherData && weatherData.current && (
+        <>
+          <img src={weatherData.current.condition.icon} alt="weather" className="weather-icon" />
+          <p className="temperature">{weatherData.current.temp_c}°C</p>
+          <p className="location">{weatherData.location.name}, {weatherData.location.country}</p>
 
       <div className='weather-data'>
 

@@ -56,7 +56,17 @@
   justify-content: space-between;
 }
 
-.weather-data .col{
+.col:hover {
+  transform: translateY(-4px);
+}
+
+.col img {
+  width: 30px;
+  height: 30px;
+  filter: invert(1);
+}
+
+.col div {
   display: flex;
   align-items: flex-start;
   gap:12px;
